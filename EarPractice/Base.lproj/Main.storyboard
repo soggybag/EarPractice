@@ -1,25 +1,503 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kGG-pX-OEJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EarPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1OC-JG-92F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="4Px-gT-k0t" detailTextLabel="3Jk-Un-F5r" style="IBUITableViewCellStyleValue1" id="DfZ-tW-1AO">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DfZ-tW-1AO" id="sSG-K0-BFk">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Px-gT-k0t">
+                                                    <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Jk-Un-F5r">
+                                                    <rect key="frame" x="249" y="12" width="56" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1OC-JG-92F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="0Id-LO-IYx"/>
+                            <constraint firstAttribute="trailing" secondItem="1OC-JG-92F" secondAttribute="trailing" id="Iem-pl-QEB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1OC-JG-92F" secondAttribute="bottom" id="tjg-WG-7lO"/>
+                            <constraint firstItem="1OC-JG-92F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vVA-m1-ylK"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qef-rg-YBR">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="s2i-pg-KKw">
+                            <connections>
+                                <segue destination="E7E-Lr-wrT" kind="show" identifier="toDetailSegue" id="Dza-An-s4Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="1OC-JG-92F" id="qwB-6e-A0L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1262" y="171"/>
+        </scene>
+        <!--Intervals-->
+        <scene sceneID="s0L-10-n4C">
+            <objects>
+                <viewController id="E7E-Lr-wrT" customClass="IntervalQuizViewController" customModule="EarPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aqi-0K-MqY"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Vh-ay-KWc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dbz-gt-P5I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct! that was a Major 3rd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2z6-kS-bNu">
+                                <rect key="frame" x="16" y="87" width="288" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-wM-DGC">
+                                <rect key="frame" x="16" y="119" width="288" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9u-p9-1CG" customClass="CustomButton" customModule="EarPractice" customModuleProvider="target">
+                                <rect key="frame" x="16" y="410" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ync-wZ-al5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playNextButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="VTq-LN-tgk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 of 36 correct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUF-zw-FS7">
+                                <rect key="frame" x="16" y="129" width="288" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BBl-pZ-0Vm">
+                                <rect key="frame" x="16" y="165" width="288" height="225"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="saD-Er-lL8">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rve-F0-0kf" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Minor 2nd">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="2t6-s7-OCR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQe-Yk-Tzj" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="99.5" y="0.0" width="89" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Major 2nd">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="UqD-Ep-H53"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ps-v1-u9q" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="198.5" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Minor 3rd">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="1Ja-xo-RN1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ECx-ZC-f54">
+                                        <rect key="frame" x="0.0" y="47" width="288" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPs-jS-yhn" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Major 3rd">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="dKb-VC-Ivo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN4-DT-gyz" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="99.5" y="0.0" width="89" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Perfect 4th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="sxK-BQ-14f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-vg-Chh" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="198.5" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Tritone">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="5dT-f1-04d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BJE-9W-dPe">
+                                        <rect key="frame" x="0.0" y="94" width="288" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-0e-4q5" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Perfect 5th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="MIP-96-Cb4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7K-2R-kGR" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="99.5" y="0.0" width="89" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Minor 6th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="4xz-j7-PHU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXc-3x-Oht" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="198.5" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Major 6th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="JYn-Kp-euQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0gf-Lt-maQ">
+                                        <rect key="frame" x="0.0" y="141" width="288" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHG-5d-6No" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Minor 7th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="nCq-pS-XVl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eF3-pI-O9l" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="99.5" y="0.0" width="89" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Major 7th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="1On-gy-MPg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-uS-bC8" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="198.5" y="0.0" width="89.5" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Major 6th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="WyX-i7-6Jm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wbu-ph-IKH">
+                                        <rect key="frame" x="0.0" y="188" width="288" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-b3-dFR" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Minor 9th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="Gsu-2o-7aU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2J-Ay-5Jb" customClass="IntervalButton" customModule="EarPractice" customModuleProvider="target">
+                                                <rect key="frame" x="149" y="0.0" width="139" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="Major 9th">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="intervalButtonTapped:" destination="E7E-Lr-wrT" eventType="touchUpInside" id="tUr-Ei-m1m"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ECx-ZC-f54" firstAttribute="width" secondItem="BBl-pZ-0Vm" secondAttribute="width" id="Wnm-CK-K94"/>
+                                    <constraint firstItem="saD-Er-lL8" firstAttribute="width" secondItem="BBl-pZ-0Vm" secondAttribute="width" id="dy9-PT-TCQ"/>
+                                    <constraint firstItem="wbu-ph-IKH" firstAttribute="width" secondItem="BBl-pZ-0Vm" secondAttribute="width" id="ixi-vf-y6S"/>
+                                    <constraint firstItem="0gf-Lt-maQ" firstAttribute="width" secondItem="BBl-pZ-0Vm" secondAttribute="width" id="mjE-Qf-9ze"/>
+                                    <constraint firstItem="BJE-9W-dPe" firstAttribute="width" secondItem="BBl-pZ-0Vm" secondAttribute="width" id="qPR-gO-WKT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2z6-kS-bNu" firstAttribute="trailing" secondItem="dbz-gt-P5I" secondAttribute="trailingMargin" id="0Ng-2K-S5k"/>
+                            <constraint firstItem="Q9u-p9-1CG" firstAttribute="trailing" secondItem="dbz-gt-P5I" secondAttribute="trailingMargin" id="1fF-i6-bq9"/>
+                            <constraint firstItem="6Vh-ay-KWc" firstAttribute="top" secondItem="Q9u-p9-1CG" secondAttribute="bottom" constant="20" id="1sq-bI-Rk6"/>
+                            <constraint firstItem="BBl-pZ-0Vm" firstAttribute="leading" secondItem="dbz-gt-P5I" secondAttribute="leadingMargin" id="5UD-Ht-h8S"/>
+                            <constraint firstItem="BBl-pZ-0Vm" firstAttribute="top" secondItem="WUF-zw-FS7" secondAttribute="bottom" constant="18" id="6kI-8G-34i"/>
+                            <constraint firstItem="WUF-zw-FS7" firstAttribute="top" secondItem="I6g-wM-DGC" secondAttribute="bottom" constant="8" id="HES-Yp-Aji"/>
+                            <constraint firstItem="2z6-kS-bNu" firstAttribute="leading" secondItem="dbz-gt-P5I" secondAttribute="leadingMargin" id="N9r-k4-RNF"/>
+                            <constraint firstItem="I6g-wM-DGC" firstAttribute="top" secondItem="2z6-kS-bNu" secondAttribute="bottom" constant="12.5" id="SZY-Vl-Gra"/>
+                            <constraint firstItem="2z6-kS-bNu" firstAttribute="top" secondItem="Aqi-0K-MqY" secondAttribute="bottom" constant="23" id="TeI-3i-lmd"/>
+                            <constraint firstItem="WUF-zw-FS7" firstAttribute="leading" secondItem="dbz-gt-P5I" secondAttribute="leadingMargin" id="ULU-zJ-PqF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BBl-pZ-0Vm" secondAttribute="trailing" id="WeR-K4-oXB"/>
+                            <constraint firstItem="I6g-wM-DGC" firstAttribute="trailing" secondItem="dbz-gt-P5I" secondAttribute="trailingMargin" id="dwW-ok-hNU"/>
+                            <constraint firstItem="WUF-zw-FS7" firstAttribute="trailing" secondItem="dbz-gt-P5I" secondAttribute="trailingMargin" id="fMM-YM-TTw"/>
+                            <constraint firstItem="Q9u-p9-1CG" firstAttribute="leading" secondItem="dbz-gt-P5I" secondAttribute="leadingMargin" id="hAw-Za-Zzf"/>
+                            <constraint firstItem="Q9u-p9-1CG" firstAttribute="top" secondItem="BBl-pZ-0Vm" secondAttribute="bottom" constant="20" id="kTe-dV-9Ru"/>
+                            <constraint firstItem="I6g-wM-DGC" firstAttribute="leading" secondItem="dbz-gt-P5I" secondAttribute="leadingMargin" id="uYj-cG-RFn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Intervals" id="hUY-7A-YPY">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Zi7-kY-9EQ">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="E7E-Lr-wrT" id="Weq-dP-xBB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="WUF-zw-FS7" id="49r-Iq-3U4"/>
+                        <outlet property="doneButton" destination="Zi7-kY-9EQ" id="2L1-8T-gQp"/>
+                        <outlet property="playNextButton" destination="Q9u-p9-1CG" id="31R-Dw-qbD"/>
+                        <outlet property="progressView" destination="I6g-wM-DGC" id="ypB-B4-OWi"/>
+                        <outlet property="titleLabel" destination="2z6-kS-bNu" id="LpJ-Ig-dtg"/>
+                        <outletCollection property="intervalButtonCollection" destination="dQe-Yk-Tzj" collectionClass="NSMutableArray" id="zst-aW-OK9"/>
+                        <outletCollection property="intervalButtonCollection" destination="9ps-v1-u9q" collectionClass="NSMutableArray" id="1CF-af-Rze"/>
+                        <outletCollection property="intervalButtonCollection" destination="Rve-F0-0kf" collectionClass="NSMutableArray" id="2Lx-Ju-Z2V"/>
+                        <outletCollection property="intervalButtonCollection" destination="TRO-vg-Chh" collectionClass="NSMutableArray" id="vuM-ef-HOz"/>
+                        <outletCollection property="intervalButtonCollection" destination="qPs-jS-yhn" collectionClass="NSMutableArray" id="fDb-hH-9sI"/>
+                        <outletCollection property="intervalButtonCollection" destination="GN4-DT-gyz" collectionClass="NSMutableArray" id="FCY-4D-gaY"/>
+                        <outletCollection property="intervalButtonCollection" destination="l7K-2R-kGR" collectionClass="NSMutableArray" id="sdJ-ln-ZOo"/>
+                        <outletCollection property="intervalButtonCollection" destination="q1d-0e-4q5" collectionClass="NSMutableArray" id="eEf-qn-AKs"/>
+                        <outletCollection property="intervalButtonCollection" destination="NXc-3x-Oht" collectionClass="NSMutableArray" id="drT-xk-cnG"/>
+                        <outletCollection property="intervalButtonCollection" destination="WHg-uS-bC8" collectionClass="NSMutableArray" id="z9j-9E-qYr"/>
+                        <outletCollection property="intervalButtonCollection" destination="fHG-5d-6No" collectionClass="NSMutableArray" id="7YB-OH-rLZ"/>
+                        <outletCollection property="intervalButtonCollection" destination="eF3-pI-O9l" collectionClass="NSMutableArray" id="vny-lH-JIX"/>
+                        <outletCollection property="intervalButtonCollection" destination="b2J-Ay-5Jb" collectionClass="NSMutableArray" id="UwL-GU-VJH"/>
+                        <outletCollection property="intervalButtonCollection" destination="Sho-b3-dFR" collectionClass="NSMutableArray" id="9Bg-fZ-Wwj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rR5-Aa-q53" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="171"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dyz-i7-01k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGG-pX-OEJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GL8-3O-Zz2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7sp-xt-Yhs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgL-PZ-MDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="171"/>
         </scene>
     </scenes>
 </document>
